@@ -22,7 +22,7 @@ export {
 event http_message_done(c: connection, is_orig: bool, stat: http_message_stat)
 	{
 	# test to ensure this is a request we want
-	if ( c$http$host && c$http$host in drupal_url && c$http$method == "GET" && /^\/release-history\// in c$http$uri && is_orig )
+	if ( c$http?$host && c$http$host in drupal_url && c$http$method == "GET" && /^\/release-history\// in c$http$uri && is_orig )
 		{
 		# example URI (this is the drupal core version)
 		# /release-history/drupal/7.x?site_key=Vlwh7cLd2GRZWs2blCucKhcii33elvj4f1CS1zuve_g&version=7.34&list=block%2Cblog%2Ccolor%2Ccomment%2Ccontextual%2Cdashboard%2Cdblog%2Cfield%2Cfield_sql_storage%2Cfield_ui%2Cfile%2Cfilter%2Chelp%2Cimage%2Clist%2Cmenu%2Cnode%2Cnumber%2Coptions%2Coverlay%2Cpath%2Crdf%2Csearch%2Cshortcut%2Cstatistics%2Csystem%2Ctaxonomy%2Ctext%2Ctoolbar%2Cupdate%2Cuser%2Cbartik%2Cseven
